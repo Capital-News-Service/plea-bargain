@@ -1,0 +1,123 @@
+<!-- Bar chart including:
+  cutom title for tool tip,
+  comma and $ on tool tip and y-axis,
+  custom colors
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>
+    	Capital News Service
+    </title>
+
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700|PT+Serif:400,700" rel="stylesheet">
+
+    <!-- Load c3.css -->
+	<link href="css/c3.css" rel="stylesheet">
+
+	<!-- Load our css -->
+	<link href="css/css.css" rel="stylesheet">
+
+	<!-- Load d3.js and c3.js -->
+	<script src="js/d3.min.js" charset="utf-8"></script>
+	<script src="js/c3.min.js"></script>
+
+  </head>
+
+  <body>
+   	<div id="container">
+      <div id="head">
+     		<h1 class="highcharts-title">In now-vacated cases, many defendants held without bail ahead of trial</h1>
+
+     		<text class="highcharts-subtitle" y="60">
+     			<tspan>BY LINDSAY HUTH</tspan>
+     			<!-- ^^ PUT YOUR NAME HERE, TAKE CREDIT FOR YOUR COOL WORK ^^ -->
+     			<tspan onclick="location.href=&quot;http://cnsmaryland.org&quot;"> | CAPITAL NEWS SERVICE</tspan>
+        </text>
+      </div>
+      <div id="data">
+        <text class="chatter">
+          <tspan>Nearly a third of defendants in the voided cases were refused bail, and just four percent were released without needing to pay bail before their trial. That's the opposite of what's typical for defendants held on the same types of charges, a Capital News Service analysis found. Studies show that holding defendants in custody increases the chance they will enter guilty pleas. The percentage of defendants required to post bail in order to get out before trial was roughly the same for both groups. </tspan>
+          <br>
+          <br>
+          <tspan><strong>Bail Status of Defendants</strong></tspan>
+        </text>
+   		<div id="chart"></div>
+   		<div id="source"><text><a href="http://mda.maryland.gov/spay_neuter_program/Pages/default.aspx"><tspan>Source: Capital News Service analysis of Maryland court data via Maryland Volunteer Lawyers Service</tspan></a></text></div>
+   		<!-- ^^ PUT YOUR SOURCE HERE AND LINK IT^^ -->
+    </div>
+   	</div>
+   	<script type="text/javascript">
+
+
+var chart = c3.generate({
+    data: {
+    	x: 'x',
+        columns: [
+            ['x', 'Vacated Cases', 'All Baltimore Cases with Same Charges'],
+              ['Held Without Bail', .307, .071],
+              ['Released Without Needing to Pay Bail', .039, .312],
+        ],
+        type: 'bar',
+        labels: {
+          format: {
+                'Held Without Bail': d3.format(".0%"),
+                'Released Without Needing to Pay Bail': d3.format(".0%")
+              },
+            },
+        //ADD CUSTOM COLORS
+      colors: {
+          'Held Without Bail': '#272c68',
+          'Released Without Needing to Pay Bail': '#9999cc'
+      },
+      color: function (color, d) {
+          // d will be 'id' when called for legends
+          return d.id && d.id === 'data3' ? d3.rgb(color).darker(d.value / 150) : color;
+      }
+
+ },
+ //ADD COMMA AND DOLLAR SIGN TO TOOL TIP
+        tooltip: {
+            format: {
+                value: function(value) {
+                    return d3.format(",.2f")(value)
+                }
+            }
+        },
+          //ADD COMMA AND DOLLAR SIGN TO Y AXIS
+        axis : {
+          x: {
+            type: 'category',
+          },
+        y : {
+            tick: {
+                format: d3.format("%")
+//                format: function (d) { return "$" + d; }
+            },
+            label: {
+              text: 'Percent of Defendants',
+              position: 'outer-middle'
+            }
+        }
+    },
+  //HIDE LEGEND
+    legend: {
+hide: 'data1'
+  //or hide: ['data1', 'data2']
+},
+  //CUSTOM TITLE FOR TOOPTIP
+    tooltip: {
+    }
+    });
+
+
+
+
+ 	 </script>
+  </body>
+
+</html>

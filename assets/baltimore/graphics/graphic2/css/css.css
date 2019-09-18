@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+div#source {
+	font-family:'PT Serif';
+	text-align: right;
+	padding-top: 10px;
+	font-size: 12px;
+}
+
+a{
+	color: inherit;
+  	text-decoration: inherit;
+}
+
+#chart{
+	margin-top:10px;
+	font-family: 'PT Sans', sans-serif;
+}
+
+#container {
+	padding: 0px !important;
+}
+
+#head {
+	background-color: #f2f2f2;
+	padding: 25px;
+}
+
+#data {
+	padding: 25px;
+}
+
+.highcharts-title {
+	font-family: 'PT Serif', serif;
+	font-weight:600;
+	font-size:24pt;
+	fill:#2c2c2c;
+	margin-top: 0px;
+	margin-bottom: 10px;
+	line-height: 1.1em;
+
+}
+.highcharts-subtitle {
+	font-family: 'PT Sans', sans-serif;
+    color: #181818;
+    font-weight: 300;
+    font-size: 8pt;
+}
+
+.chatter {
+	font-family: 'PT Sans', sans-serif;
+}
+
+/*Styles the div that holds the highchart */
+div#container {
+	margin-top:20px;
+	margin-bottom:20px;
+	padding-left:20px;
+	padding-top:20px;
+	padding-right:30px;
+	padding-bottom:10px;
+	border-left:1px solid black;
+	border-bottom:14pt solid black;
+	border-top:1px solid black;
+	border-right:1px solid black;
+	box-shadow:5px 5px 10px gainsboro;
+	min-width: 310px;
+	max-width: 600px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+/* y axis label size */
+.c3-axis-y-label {
+  font-size: 12px; //change the size of the fonts
+}
+
+/* x axis label size */
+.c3-axis-x-label  {
+  font-size: 12px; //change the size of the fonts
+}
+
+/* y axis tick size */
+.c3-axis-y g {
+  font-size: 12px; //change the size of the fonts
+}
+
+.c3-axis-y text {
+  font-family: 'PT Sans', sans-serif;
+}
+
+/* x axis tick size */
+.c3-axis-x g {
+  font-size: 12px; //change the size of the fonts
+}
+
+.c3-axis-x text {
+  font-family: 'PT Sans', sans-serif;
+}
+
+.c3-legend-item text{
+  font-size: 14px; //change the size of the fonts
+	font-family: 'PT Sans', sans-serif;
+}
+
+.c3-chart-text {
+  font-family: 'PT Sans', sans-serif;
+}
+
+.c3-legend-item {
+	font-family: 'PT Sans', sans-serif;
+}
